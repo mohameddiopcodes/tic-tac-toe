@@ -13,6 +13,16 @@ body {
     align-items: center;
     font-family: 'Roboto', sans-serif;
 }
-header {
-    font-weight: 100;
+
+#game div {
+    height: 20vmin;
+    width: 60vmin;
+    border: 1px solid black;
+}
+
+#game .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
