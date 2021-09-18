@@ -26,3 +26,24 @@ body {
     align-items: center;
 
 }
+
+.row > div {
+    font-size: 15vmin;
+    text-align: center;
+}
+
+#btn {
+    padding:  3vmin 5vmin;
+    font-size: 1.2em;
+    border: 3px solid black;
+    border-radius: 5%;
+    margin: 5vmin;
+    background: #fff;
+    visibility: hidden;
+    transform: all 0.5s ease-in-out;
+}
+
+#btn:hover {
+    color: green;
+    border: 3px solid green;
+}
