@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 
 * {
     box-sizing: border-box;
@@ -11,13 +11,29 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    font-size: 1em;
+    margin-bottom: 10vmin;
+}
+
+.middle-row {
+    border-top: 8px solid black;
+    border-bottom: 8px solid black;
+}
+
+.middle-col {
+    border-left: 8px solid black;
+    border-right: 8px solid black;
 }
 
 #game div {
     height: 20vmin;
     width: 60vmin;
-    border: 1px solid black;
+    z-index: 100;
+    /* border: 1px solid black; */
 }
 
 #game .row {
