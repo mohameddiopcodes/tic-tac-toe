@@ -13,8 +13,6 @@ let board = [
 ];
 let turn = 1;
 let winner = null;
-// let darkMode = false;
-// let lineThrough = false;
 
 /*----- cached element references -----*/
 const cells = [...document.querySelectorAll('.row > div')];
@@ -56,7 +54,7 @@ function updateBoard(e) {
     if(!e.target.textContent) {
         e.target.textContent = chipLookup[turn];
         board[e.target.id[0]][e.target.id[1]] = turn;
-        checkWin(e);
+        checkWin();
         turn *= -1;
         if(!board[0].includes(0) && !board[1].includes(0) && !board[2].includes(0)) {
             endGame("It's a tie");
@@ -64,7 +62,7 @@ function updateBoard(e) {
     }
 }
 
-function checkWin(e) {
+function checkWin() {
     //checking for horizontal wins
     board.forEach((rowArr, rowId) => {
         if(!rowArr.includes(0) && !rowArr.includes(-1)) {
@@ -87,6 +85,7 @@ function checkWin(e) {
             endGame('O Wins!')
         }
     })
+
     //checking for vertical wins
     if(board[0][0] === board[1][0] && board[0][0] === board[2][0] && board[0][0] === 1) {
         lineThrough('90deg', '-1.5%', '39.5%', '1');
@@ -107,6 +106,7 @@ function checkWin(e) {
         lineThrough('90deg', '-1.5%', '-24.7%', '1');
         endGame('O Wins!')
     }
+
     //checking for slanted wins
     if(board[0][0] === board[1][1] && board[0][0] === board[2][2] && board[0][0] === 1) {
         lineThrough('44.5deg', '-4%', '5%', '1.2');
@@ -149,5 +149,4 @@ function endGame(text) {
         [0,0,0],
         [0,0,0]
     ];
-
 }
