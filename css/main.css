@@ -19,6 +19,21 @@ h1 {
     margin-bottom: 10vmin;
 }
 
+#game {
+    position: relative;
+}
+
+img {
+    visibility: hidden;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    transform: translateX(-4%);
+    width: 110%;
+    height: 105%;
+    /* transform: all 0.5s ease-in-out; */
+}
+
 .middle-row {
     border-top: 8px solid black;
     border-bottom: 8px solid black;
@@ -49,11 +64,12 @@ h1 {
 }
 
 #btn {
+    z-index: 101;
     padding:  3vmin 5vmin;
     font-size: 1.2em;
     border: 3px solid black;
     border-radius: 5%;
-    margin: 5vmin;
+    margin: 10vmin;
     background: #fff;
     visibility: hidden;
     transform: all 0.5s ease-in-out;

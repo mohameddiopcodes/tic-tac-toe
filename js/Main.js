@@ -20,6 +20,7 @@ let winner = null;
 const cells = [...document.querySelectorAll('.row > div')];
 const message = document.querySelector('h1');
 const btn = document.querySelector('#btn');
+const line = document.querySelector('img')
 
 /*----- event listeners -----*/
 cells.forEach(cell => {
@@ -67,35 +68,75 @@ function checkWin(e) {
     //checking for horizontal wins
     board.forEach((rowArr, rowId) => {
         if(!rowArr.includes(0) && !rowArr.includes(-1)) {
-            endGame('X Wins!')
+            if(rowId === 1) {
+                lineThrough();
+            } else if(rowId === 0) {
+                lineThrough('0', '0', '-30%');
+            } else if(rowId === 2) {
+                lineThrough('0', '0', '32%');
+            }
+            endGame('X Wins!');
         } else if(!rowArr.includes(0) && !rowArr.includes(1)) {
+            if(rowId === 1) {
+                lineThrough();
+            } else if(rowId === 0) {
+                lineThrough('0', '0', '-30%');
+            } else if(rowId === 2) {
+                lineThrough('0', '0', '32%');
+            }
             endGame('O Wins!')
         }
     })
     //checking for vertical wins
     if(board[0][0] === board[1][0] && board[0][0] === board[2][0] && board[0][0] === 1) {
-        endGame('X Wins!')
+        lineThrough('90deg', '-1.5%', '39.5%');
+        endGame('X Wins!');
     } else if(board[0][0] === board[1][0] && board[0][0] === board[2][0] && board[0][0] === -1) {
+        lineThrough('90deg', '-1.5%', '39.5%');
         endGame('O Wins!')
     } else if(board[0][1] === board[1][1] && board[0][1] === board[2][1] && board[0][1] === 1) {
+        lineThrough('90deg', '-1.5%', '7.3%');
         endGame('X Wins!')
     } else if(board[0][1] === board[1][1] && board[0][1] === board[2][1] && board[0][1] === -1) {
+        lineThrough('90deg', '-1.5%', '7.3%');
         endGame('O Wins!')
     } else if(board[0][2] === board[1][2] && board[0][2] === board[2][2] && board[0][2] === 1) {
+        lineThrough('90deg', '-1.5%', '-24.7%');
         endGame('X Wins!')
     } else if(board[0][2] === board[1][2] && board[0][2] === board[2][2] && board[0][2] === -1) {
+        lineThrough('90deg', '-1.5%', '-24.7%');
         endGame('O Wins!')
     }
     //checking for slanted wins
     if(board[0][0] === board[1][1] && board[0][0] === board[2][2] && board[0][0] === 1) {
-        endGame('X Wins!')
+        lineThrough('44.5deg', '-5%', '5%', '1.2');
+        endGame('X Wins!');
     } else if(board[0][0] === board[1][1] && board[0][0] === board[2][2] && board[0][0] === -1) {
-        endGame('O Wins!')
+        lineThrough('44.5deg', '0', '2%', '1.2');
+        endGame('O Wins!');
     } else if(board[0][2] === board[1][1] && board[0][2] === board[2][0] && board[0][2] === 1) {
-        endGame('X Wins!')
+        lineThrough('-44.5deg', '0', '-2%', '1.2');
+        endGame('X Wins!');
     } else if(board[0][2] === board[1][1] && board[0][2] === board[2][0] && board[0][2] === -1) {
-        endGame('O Wins!')
+        endGame('O Wins!');
     }
+}
+
+function lineThrough(rotate, translateX, translateY, scale) {
+    line.style.visibility = 'visible';
+    line.style.transform = `rotate(${rotate})`;
+    line.style.transform += ` translateX(${translateX})`;
+    line.style.transform += ` translateY(${translateY})`;
+    line.style.transform += ` scale(${scale})`;
+}
+
+function replay(e) {
+    cells.forEach(cell => {
+        cell.textContent = '';
+    })
+    btn.style.visibility = 'hidden';
+    message.textContent = 'Make your moves';
+    line.style.visibility = 'hidden';
 }
 
 function endGame(text) {
@@ -108,12 +149,4 @@ function endGame(text) {
         [0,0,0]
     ];
 
-}
-
-function replay(e) {
-    cells.forEach(cell => {
-        cell.textContent = '';
-    })
-    btn.style.visibility = 'hidden';
-    message.textContent = 'Make your moves';
 }
