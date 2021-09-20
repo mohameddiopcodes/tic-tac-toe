@@ -14,6 +14,10 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+header {
+    margin-top: 10vmin;
+}
+
 h1 {
     font-size: 1em;
     margin-bottom: 10vmin;
