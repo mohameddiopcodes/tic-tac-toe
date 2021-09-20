@@ -2,5 +2,6 @@
 
 ## Tic Tac Toe
 
-A simple and minimalist tic tac toe game built with HTML, CSS and Javascript.
-Check it out wwww.ga-tictactoe.surge.sh
+A simple and minimalist tic tac toe game built w/ HTML, CSS and Javascript.
+
+[Play now!](wwww.ga-tictactoe.surge.sh)
