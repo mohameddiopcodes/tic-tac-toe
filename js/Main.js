@@ -69,55 +69,56 @@ function checkWin(e) {
     board.forEach((rowArr, rowId) => {
         if(!rowArr.includes(0) && !rowArr.includes(-1)) {
             if(rowId === 1) {
-                lineThrough();
+                lineThrough('0', '0', '0', '1');
             } else if(rowId === 0) {
-                lineThrough('0', '0', '-30%');
+                lineThrough('0', '0', '-30%', '1');
             } else if(rowId === 2) {
-                lineThrough('0', '0', '32%');
+                lineThrough('0', '0', '32%', '1');
             }
             endGame('X Wins!');
         } else if(!rowArr.includes(0) && !rowArr.includes(1)) {
             if(rowId === 1) {
-                lineThrough();
+                lineThrough('0', '0', '0', '1');
             } else if(rowId === 0) {
-                lineThrough('0', '0', '-30%');
+                lineThrough('0', '0', '-30%', '1');
             } else if(rowId === 2) {
-                lineThrough('0', '0', '32%');
+                lineThrough('0', '0', '32%', '1');
             }
             endGame('O Wins!')
         }
     })
     //checking for vertical wins
     if(board[0][0] === board[1][0] && board[0][0] === board[2][0] && board[0][0] === 1) {
-        lineThrough('90deg', '-1.5%', '39.5%');
+        lineThrough('90deg', '-1.5%', '39.5%', '1');
         endGame('X Wins!');
     } else if(board[0][0] === board[1][0] && board[0][0] === board[2][0] && board[0][0] === -1) {
-        lineThrough('90deg', '-1.5%', '39.5%');
+        lineThrough('90deg', '-1.5%', '39.5%', '1');
         endGame('O Wins!')
     } else if(board[0][1] === board[1][1] && board[0][1] === board[2][1] && board[0][1] === 1) {
-        lineThrough('90deg', '-1.5%', '7.3%');
+        lineThrough('90deg', '-1.5%', '7.3%', '1');
         endGame('X Wins!')
     } else if(board[0][1] === board[1][1] && board[0][1] === board[2][1] && board[0][1] === -1) {
-        lineThrough('90deg', '-1.5%', '7.3%');
+        lineThrough('90deg', '-1.5%', '7.3%', '1');
         endGame('O Wins!')
     } else if(board[0][2] === board[1][2] && board[0][2] === board[2][2] && board[0][2] === 1) {
-        lineThrough('90deg', '-1.5%', '-24.7%');
+        lineThrough('90deg', '-1.5%', '-24.7%', '1');
         endGame('X Wins!')
     } else if(board[0][2] === board[1][2] && board[0][2] === board[2][2] && board[0][2] === -1) {
-        lineThrough('90deg', '-1.5%', '-24.7%');
+        lineThrough('90deg', '-1.5%', '-24.7%', '1');
         endGame('O Wins!')
     }
     //checking for slanted wins
     if(board[0][0] === board[1][1] && board[0][0] === board[2][2] && board[0][0] === 1) {
-        lineThrough('44.5deg', '-5%', '5%', '1.2');
+        lineThrough('44.5deg', '-4%', '5%', '1.2');
         endGame('X Wins!');
     } else if(board[0][0] === board[1][1] && board[0][0] === board[2][2] && board[0][0] === -1) {
-        lineThrough('44.5deg', '0', '2%', '1.2');
+        lineThrough('44.5deg', '-4%', '5%', '1.2');
         endGame('O Wins!');
     } else if(board[0][2] === board[1][1] && board[0][2] === board[2][0] && board[0][2] === 1) {
         lineThrough('-44.5deg', '0', '-2%', '1.2');
         endGame('X Wins!');
     } else if(board[0][2] === board[1][1] && board[0][2] === board[2][0] && board[0][2] === -1) {
+        lineThrough('-44.5deg', '0', '-2%', '1.2');
         endGame('O Wins!');
     }
 }
