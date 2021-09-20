@@ -4,4 +4,4 @@
 
 A simple and minimalist tic tac toe game built w/ HTML, CSS and Javascript.
 
-[Play now!](http://wwww.ga-tictactoe.surge.sh)
+[Play now!](http://www.ga-tictactoe.surge.sh)
