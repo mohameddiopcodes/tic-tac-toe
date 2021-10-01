@@ -65,6 +65,7 @@ img {
 .row > div {
     font-size: 15vmin;
     text-align: center;
+    -webkit-tap-highlight-color: transparent;;
 }
 
 #btn {
@@ -76,7 +77,9 @@ img {
     margin: 10vmin;
     background: #fff;
     visibility: hidden;
+    color: black;
     transform: all 0.5s ease-in-out;
+    -webkit-tap-highlight-color: transparent;
 }
 
 #btn:hover {
